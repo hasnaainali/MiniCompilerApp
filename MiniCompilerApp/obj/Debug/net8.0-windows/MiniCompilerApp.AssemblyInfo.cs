@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniCompilerApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22d57959a1c3045fa8188c4ff752997d3780f984")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniCompilerApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniCompilerApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

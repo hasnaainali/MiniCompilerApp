@@ -1,6 +1,6 @@
-// Form1.cs
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MiniCompilerApp
@@ -24,12 +24,26 @@ namespace MiniCompilerApp
             if (syntaxTree == null)
             {
                 resultLabel.Text = "Syntax Error.";
+                symbolTableTextBox.Text = string.Empty;
             }
             else
             {
-                resultLabel.Text = "Compilation Successful.";
+                if (!IsValidVariableName(tokens[1]))
+                {
+                    resultLabel.Text = "Compilation Failed: Invalid Variable Name.";
+                    symbolTableTextBox.Text = string.Empty;
+                }
+                else
+                {
+                    resultLabel.Text = "Compilation Successful.";
+                    string variableName = tokens[1];
+                    string variableType = tokens[0];
+                    string variableValue = tokens[3];
+                    symbolTableTextBox.Text = $"Name: {variableName}, Type: {variableType}, Value: {variableValue}";
+                }
             }
         }
+
         private bool IsValidVariableName(string name)
         {
             if (string.IsNullOrEmpty(name))
@@ -46,14 +60,14 @@ namespace MiniCompilerApp
             // Reserved keywords
             string[] reservedKeywords = new string[]
             {
-        "int", "class", "namespace", "void", "public", "private", "protected",
-        "static", "return", "if", "else", "while", "for", "switch", "case",
-        "break", "continue", "default", "new", "this", "base", "null", "true",
-        "false", "using", "try", "catch", "finally", "throw", "typeof", "struct",
-        "enum", "interface", "override", "virtual", "readonly", "abstract",
-        "sealed", "volatile", "const", "event", "delegate", "extern", "out",
-        "ref", "params", "sizeof", "stackalloc", "unsafe", "fixed", "lock", "checked",
-        "unchecked", "dynamic", "is", "as", "async", "await"
+                "int", "class", "namespace", "void", "public", "private", "protected",
+                "static", "return", "if", "else", "while", "for", "switch", "case",
+                "break", "continue", "default", "new", "this", "base", "null", "true",
+                "false", "using", "try", "catch", "finally", "throw", "typeof", "struct",
+                "enum", "interface", "override", "virtual", "readonly", "abstract",
+                "sealed", "volatile", "const", "event", "delegate", "extern", "out",
+                "ref", "params", "sizeof", "stackalloc", "unsafe", "fixed", "lock", "checked",
+                "unchecked", "dynamic", "is", "as", "async", "await"
             };
 
             if (reservedKeywords.Contains(name))
@@ -61,6 +75,5 @@ namespace MiniCompilerApp
 
             return true;
         }
-
     }
 }
