@@ -1,0 +1,22 @@
+Validation Results:
+Hasnain - Valid
+Letters: 7 (Uppercase: 1, Lowercase: 6), Digits: 0, Underscores: 0
+Generated Password: tqD49I5e%o8^ (Strength: Strong)
+
+ali - Invalid (Username length must be between 5 and 15 characters)
+
+sarmad - Valid
+Letters: 6 (Uppercase: 0, Lowercase: 6), Digits: 0, Underscores: 0
+Generated Password: U74$nwopQvK% (Strength: Strong)
+
+hamdani - Valid
+Letters: 7 (Uppercase: 0, Lowercase: 7), Digits: 0, Underscores: 0
+Generated Password: V%k^lq20io!F (Strength: Strong)
+
+_dont - Invalid (Username must start with a letter)
+
+
+Summary:
+Total Usernames: 5
+Valid Usernames: 3
+Invalid Usernames: 2
